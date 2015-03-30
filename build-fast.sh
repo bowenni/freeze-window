@@ -1,0 +1,1 @@
+MAVEN_OPTS="-Xmx1g -Xms1g" mvn -Dmaven.test.skip=true -DskipTests=true clean hpi:run

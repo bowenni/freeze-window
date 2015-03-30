@@ -1,0 +1,55 @@
+<!--
+  The MIT License
+
+  Copyright (c) 2011, Frederik Fromm
+
+  Changes to this code are Copyright 2015 Yahoo! Inc. Licensed under the
+  project's Open Source license.
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to deal
+  in the Software without restriction, including without limitation the rights
+  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+  copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+  THE SOFTWARE.
+-->
+
+ <div>
+  Insert one cron expression (http://en.wikipedia.org/wiki/Cron) per line to add freeze windows in UTC time
+  <pre>
+  Cron expression supported is as follow:
+  </pre>
+  <pre>
+  # * * * * * *
+  # │ │ │ │ │ |
+  # │ │ │ │ │ └── (Optional)  year (1970-2099)
+  # │ │ │ │ └───── day of week (0 - 6) (0 to 6 are Sunday to Saturday)
+  # │ │ │ └────────── month (1 - 12)
+  # │ │ └─────────────── day of month (1 - 31)
+  # │ └──────────────────── hour (0 - 23)
+  # └───────────────────────── min (0 - 59)
+  </pre>
+  <pre>
+  No support for seconds.
+  </pre>
+  <pre>
+  No support for specifying both a day-of-week and a day-of-month value (you'll need to use the '?' character in one of these fields)
+  </pre>
+  <pre>
+  Examples:
+    * 9-17 ? * 1-5  (Build does not run between 9am to 5pm from Monday to Friday UTC time)
+    * 8-12 ? * 6-7  (Build does not run between 8am to 12pm on Saturday and Sunday UTC time)
+    * 14-20 1 * ?   (Build does not run between 2pm to 8pm on 1st of every month UTC time)
+  </pre>
+</div>
