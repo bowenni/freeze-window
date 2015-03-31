@@ -131,8 +131,8 @@ public class FreezeWindowMonitor {
             sb.append(" " + cronParts[5]);
         }
 
-        System.out.println("Input freeze window cron format: " + fw);
-        System.out.println("After normalize: " + sb);
+        //System.out.println("Input freeze window cron format: " + fw);
+        //System.out.println("After normalize: " + sb);
         return sb.toString();
     }
 }
